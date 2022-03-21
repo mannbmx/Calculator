@@ -1,52 +1,68 @@
-let firstNumber = 0;
-let secondNumber = 0;
-const primaryNum = document.querySelector('#ans');
-primaryNum.textContent = firstNumber;
+const numberButtons = document.querySelectorAll('[data-num]');
+const mainNum = document.querySelector('#ans');
+const oppButtons = document.querySelectorAll('[data-opp]');
+const prevAns = document.querySelector('#prevAns')
+const equal = document.querySelector('#equal')
+const clear = document.querySelector('#clear')
 
-const prevAns = document.querySelector('#prevAns');
-prevAns.textContent = secondNumber;
+let opp = null;
+let firstNum = '';
+let secondNum = '';
 
-const numButton = document.querySelectorAll('.number');
-let a;
-let b = '';
-for(let i = 0; i < numButton.length; i++) {
-   
-    numButton[i].addEventListener('click', function(event) {
-        a = event.target.value;
-        a = a.toString();
-        b += a;
-        primaryNum.textContent = b;
-        console.log(a);
-    });
+numberButtons.forEach((button) => 
+    button.addEventListener('click', () => primaryNum(button.textContent))
+);
+
+function primaryNum(number) {
+    mainNum.textContent += number;
 }
 
-const clear = document.querySelector('#clear');
-clear.addEventListener('click', () => {
-    primaryNum.textContent = 0;
-    firstNumber = 0;
-    secondNumber = 0;
+oppButtons.forEach((button) =>
+    button.addEventListener('click', () => opperand(button.textContent))
+);
+
+function opperand(e){
+    opp = e;
+    firstNum = mainNum.textContent;
+    prevAns.textContent = firstNum + ' '+ opp
+    mainNum.textContent = '';
+}
+
+clear.addEventListener('click', () =>{
+    mainNum.textContent = '';
+    prevAns.textContent = '';
+})
+
+equal.addEventListener('click', () => {
+    secondNum = mainNum.textContent;
+    prevAns.textContent += ' '+ secondNum;
+    if( opp === '+'){
+        mainNum.textContent = add(firstNum, secondNum);
+    }else if( opp === '-'){
+        mainNum.textContent = sub(firstNum, secondNum);
+    }else if( opp === 'x'){
+        mainNum.textContent = mul(firstNum, secondNum);
+    }else if( opp === '/'){
+        mainNum.textContent = div(firstNum, secondNum);
+    }else{
+        mainNum.textContent = 'ERROR!';
+    };
 });
 
-const equal = document.querySelector('#equal');
-const add = document.querySelector('#addition');
-add.addEventListener('click', ()=> {
-    firstNumber = parseFloat(b);
-    primaryNum.textContent = 0;
+function add(a, b){
+    return parseFloat(a) + parseFloat(b);
+}
 
-    for(let i = 0; i < numButton.length; i++) {
-   
-        numButton[i].addEventListener('click', function(event) {
-            let c = event.target.value;
-            c = c.toString();
-            let d = '';
-            d += c;
-            primaryNum.textContent = b;
-            secondNumber = parseFloat(d);
-        });
-    }
+function sub(a, b){
+    return parseFloat(a) - parseFloat(b);
+}
 
-    equal.addEventListener('click', () =>{
-        primaryNum.textContent = firstNumber + secondNumber;
-    })
-});
+function mul(a, b){
+    return parseFloat(a) * parseFloat(b);
+}
+
+function div(a, b){
+    return parseFloat(a) / parseFloat(b);
+}
+
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -24,28 +24,28 @@
                     <button id="clear" class="button">C</buttons>
                 </div>
                 <div id="secondRow" class="row">
-                    <button id="7" class="number button" value="7">7</button>
-                    <button id="8" class="number button" value="8">8</button>
-                    <button id="9" class="number button" value="9">9</button>
-                    <button id="divide" class="button">/</button>
+                    <button id="7" class="number button" value="7" data-num>7</button>
+                    <button id="8" class="number button" value="8" data-num>8</button>
+                    <button id="9" class="number button" value="9" data-num>9</button>
+                    <button id="divide" class="button" data-opp>/</button>
                 </div>
                 <div id="thirdRow" class="row">
-                    <button id="4" class="number button" value="4">4</button>
-                    <button id="5" class="number button" value="5">5</button>
-                    <button id="6" class="number button" value="6">6</button>
-                    <button id="multiply" class="button">X</button>
+                    <button id="4" class="number button" value="4" data-num>4</button>
+                    <button id="5" class="number button" value="5" data-num>5</button>
+                    <button id="6" class="number button" value="6" data-num>6</button>
+                    <button id="multiply" class="button" data-opp>x</button>
                 </div>
                 <div id="fourthRow" class="row">
-                    <button id="1" class="number button" value="1">1</button>
-                    <button id="2" class="number button" value="2">2</button>
-                    <button id="3" class="number button" value="3">3</button>
-                    <button id="subtract" class="button">-</button>
+                    <button id="1" class="number button" value="1" data-num>1</button>
+                    <button id="2" class="number button" value="2" data-num>2</button>
+                    <button id="3" class="number button" value="3" data-num>3</button>
+                    <button id="subtract" class="button" data-opp>-</button>
                 </div>
                 <div id="fifthRow" class="row">
-                    <button id="0" class="number button" value="0">0</button>
-                    <button id="decimal" class="button" value=".">.</button>
+                    <button id="0" class="number button" value="0" data-num>0</button>
+                    <button id="decimal" class="button" value="." data-num>.</button>
                     <button id="equal" class="button">=</button>
-                    <button id="addition" class="button">+</button>
+                    <button id="addition" class="button" data-opp>+</button>
                 </div>
             </div>
            </div>

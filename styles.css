@@ -8,7 +8,7 @@ body{
 #calcBody{
     background-color: #E1B80D;
     height: 450px;
-    width: 350px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,6 +25,12 @@ body{
     align-items: flex-end;
     justify-content: space-between;
     border-radius: 10px;
+}
+
+#solar{
+    background-color: #35373b;
+    height: 35px;
+    align-self: center;
 }
 
 #ans{
@@ -71,6 +77,7 @@ body{
 
 #clear{
     flex: 0;
-    min-width: 71.25px;
+    min-width: 66.25px;
+    max-width: 71.25px;
     height: 59px;
 }
