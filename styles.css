@@ -25,6 +25,7 @@ body{
     align-items: flex-end;
     justify-content: space-between;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 #solar{
